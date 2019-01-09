@@ -15,4 +15,6 @@ public class MainMenu : MonoBehaviour
     {
         Application.Quit();
     }
+    public void Menu()
+    { SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2); }
 }
