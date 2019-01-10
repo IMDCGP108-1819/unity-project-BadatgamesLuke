@@ -76,7 +76,8 @@ public class AsteroidM : MonoBehaviour {
             //Tells player that they need to score points
             player.SendMessage("ScorePoints",points);
 
-            Instantiate(boom, transform.position, transform.rotation);
+            GameObject newBoom = Instantiate(boom, transform.position, transform.rotation);
+            Destroy (newBoom, 3f);
 
             //Debug.Log("Hit" + other.name);
               Destroy(gameObject);
