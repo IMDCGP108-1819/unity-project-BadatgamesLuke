@@ -16,6 +16,7 @@ public class AsteroidM : MonoBehaviour {
     public GameObject asteroidSmall;
     public int points;
     public GameObject player;
+    public GameObject boom;
 
     // Use this for initialization
     void Start() {
@@ -74,6 +75,8 @@ public class AsteroidM : MonoBehaviour {
             }
             //Tells player that they need to score points
             player.SendMessage("ScorePoints",points);
+
+            Instantiate(boom, transform.position, transform.rotation);
 
             //Debug.Log("Hit" + other.name);
               Destroy(gameObject);

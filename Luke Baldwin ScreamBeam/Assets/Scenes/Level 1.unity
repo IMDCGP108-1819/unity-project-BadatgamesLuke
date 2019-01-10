@@ -157,6 +157,12 @@ Prefab:
       propertyPath: points
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 114404682388659942, guid: cb7f7d5dd7411c149954c8608e3c249c,
+        type: 2}
+      propertyPath: boom
+      value: 
+      objectReference: {fileID: 1329845292236604, guid: 9bba9cf244c53c5439505dfc96fdd11c,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cb7f7d5dd7411c149954c8608e3c249c, type: 2}
   m_IsPrefabAsset: 0
