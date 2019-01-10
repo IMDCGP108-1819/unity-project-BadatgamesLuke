@@ -100,6 +100,8 @@ MonoBehaviour:
   asteroidMedium: {fileID: 1189805175651612}
   asteroidSmall: {fileID: 1900586801761544, guid: 25ad7f8086efddf4fb83cc2b38a5356d,
     type: 2}
+  points: 30
+  player: {fileID: 0}
 --- !u!212 &212105346294179704
 SpriteRenderer:
   m_ObjectHideFlags: 1

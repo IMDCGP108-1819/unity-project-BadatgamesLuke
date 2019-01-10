@@ -14,6 +14,8 @@ public class AsteroidM : MonoBehaviour {
     public int asteroidChange;
     public GameObject asteroidMedium;
     public GameObject asteroidSmall;
+    public int points;
+    public GameObject player;
 
     // Use this for initialization
     void Start() {
@@ -23,6 +25,9 @@ public class AsteroidM : MonoBehaviour {
 
         rb.AddForce(thrust);
         rb.AddTorque(torque);
+
+        //Find the player
+        player = GameObject.FindWithTag("Player");
     }
 
     // Update is called once per frame
@@ -67,6 +72,9 @@ public class AsteroidM : MonoBehaviour {
             else if (asteroidChange == 1) {
 
             }
+            //Tells player that they need to score points
+            player.SendMessage("ScorePoints",points);
+
             //Debug.Log("Hit" + other.name);
               Destroy(gameObject);
         } 

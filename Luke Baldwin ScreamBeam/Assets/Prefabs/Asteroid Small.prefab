@@ -99,6 +99,8 @@ MonoBehaviour:
   asteroidChange: 1
   asteroidMedium: {fileID: 0}
   asteroidSmall: {fileID: 1900586801761544}
+  points: 50
+  player: {fileID: 0}
 --- !u!212 &212943311211453792
 SpriteRenderer:
   m_ObjectHideFlags: 1
