@@ -13,6 +13,10 @@ public class PlayerMovement : MonoBehaviour {
     public float screenBottom;
     public float screenLeft;
     public float screenRight;
+    public float bulletForce;
+    public float killedby;
+
+    public GameObject bullet;
 
     // Use this for initialization
     void Start() {
@@ -24,6 +28,14 @@ public class PlayerMovement : MonoBehaviour {
         //Gets input from the keyboard and apply thrust
         thrustInput = Input.GetAxis("Vertical");
         turnInput = Input.GetAxis("Horizontal");
+    
+    //Code Checks for input from the fire key and makes bullets
+    if(Input.GetButtonDown("Fire1")) {
+            GameObject newBullet = Instantiate (bullet, transform.position, transform.rotation);
+            newBullet.GetComponent<Rigidbody2D>().AddRelativeForce (Vector2.up * bulletForce);
+            Destroy(newBullet, 5.0f);
+        }
+        transform.Rotate(Vector3.forward * turnInput * Time.deltaTime * -turnThrust);
 
         //ScreenWraping
         Vector2 newPos = transform.position;
@@ -49,6 +61,12 @@ public class PlayerMovement : MonoBehaviour {
     private void FixedUpdate()
     {
      rb.AddRelativeForce (Vector2.up * thrustInput);
-        rb.AddTorque(-turnInput);
+
+       //rb.AddTorque(-turnInput);
+    }
+    // Code tells face hits Asteroid
+    void OnCollisionEnter2D(Collision2D collide)
+    {
+        if (collide.relativeVelocity.magnitude > killedby);
     }
 }
