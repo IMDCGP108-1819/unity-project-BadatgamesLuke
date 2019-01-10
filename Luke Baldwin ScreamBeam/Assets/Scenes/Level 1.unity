@@ -488,7 +488,7 @@ MonoBehaviour:
   screenLeft: 13.5
   screenRight: -13.5
   bulletForce: 200
-  killedby: 1
+  killedby: 2
   score1: 0
   numberoflives: 3
   scoreText: {fileID: 1389301422}
