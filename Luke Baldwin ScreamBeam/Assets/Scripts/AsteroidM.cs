@@ -18,6 +18,8 @@ public class AsteroidM : MonoBehaviour {
     public GameObject player;
     public GameObject boom;
 
+    public GameMainControl gmb;
+
     // Use this for initialization
     void Start() {
         //Code Adds movement and thrust to asteroids
@@ -29,6 +31,8 @@ public class AsteroidM : MonoBehaviour {
 
         //Find the player
         player = GameObject.FindWithTag("Player");
+        //finds game manager in scene
+        gmb = GameObject.FindObjectOfType<GameMainControl>();
     }
 
     // Update is called once per frame
@@ -63,15 +67,17 @@ public class AsteroidM : MonoBehaviour {
             if (asteroidChange == 3) {
                 Instantiate(asteroidMedium, transform.position, transform.rotation);
                 Instantiate(asteroidMedium, transform.position, transform.rotation);
-              
-               
+
+                gmb.UpdateNumberOfAsteroidsinScene(+1);
             }
             else if (asteroidChange == 2) {
                 Instantiate(asteroidSmall, transform.position, transform.rotation);
                 Instantiate(asteroidSmall, transform.position, transform.rotation);
+
+                gmb.UpdateNumberOfAsteroidsinScene(+1);
             }
             else if (asteroidChange == 1) {
-
+                gmb.UpdateNumberOfAsteroidsinScene(-1);
             }
             //Tells player that they need to score points
             player.SendMessage("ScorePoints",points);
